@@ -13,9 +13,10 @@ public class OpenNotification : MonoBehaviour
 
     public void NotificationOpen()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.M))
         {
             NotificationMenu.enabled = true;
+            GetComponent<ShowNotification>().NotificationEnabled();
         }
     }
     // Update is called once per frame
