@@ -19,7 +19,7 @@ public class MakkaraController : MonoBehaviour
     {
         isBeingCooked = false;
         grillState = 0;
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
