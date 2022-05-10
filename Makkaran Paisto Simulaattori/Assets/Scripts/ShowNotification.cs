@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class ShowNotification : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class ShowNotification : MonoBehaviour
     public Animator NotificationAnim;
     public float Notifications;
 
-    public TextMeshPro AmountText;
+    public Text AmountText;
 
     public float amount = 1;
 
@@ -21,8 +20,8 @@ public class ShowNotification : MonoBehaviour
     {
         NotificationAnim.Play("Notification");
         Notification.enabled = true;
-        Notifications += amount;
         AmountText.enabled = true;
+        Amount();
     }
 
     public void StartTimer()
