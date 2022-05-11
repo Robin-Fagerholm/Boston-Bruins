@@ -10,9 +10,7 @@ public class MakkaraController : MonoBehaviour
     private int coockingRate = 5;
     private GameManager gameManager;
 
-    // Grill state images
-    public Texture State2Image;
-    public Texture State3Image;
+    public Animator GrillStateAnim;
 
     // Manages Points
     public int points;
@@ -26,6 +24,7 @@ public class MakkaraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pointsText.enabled = false;
     //rb2d = GetComponent<Rigidbody2D>();
     isBeingCooked = false;
         grillState = 0;
@@ -69,17 +68,7 @@ public class MakkaraController : MonoBehaviour
         while(isBeingCooked){
             yield return new WaitForSeconds(coockingRate);
             //Vaihda seuraavaan vaiheeseen.
-            if (grillState == 1)
-            {
-                grillState++;
-            }
-            if (grillState == 2)
-            {
-                points += 5;
-                grillState++;
-            }
             if (grillState == 3){
-                points -= 3;
                 yield break;
             }
         }
@@ -87,8 +76,11 @@ public class MakkaraController : MonoBehaviour
     public int collisions = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Fire")
+        if (other.tag == "Notch")
         {
+            GrillStateAnim.Play("GrillState");
+            pointsText.enabled = true;
+            points += 1;
             //Grillaus ääni päälle
             isBeingCooked = true;
             StartCoroutine(CoockingTimer());
@@ -101,10 +93,10 @@ public class MakkaraController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Fire")
+        if (other.tag == "Notch")
         {
             StopCoroutine(CoockingTimer());
-
+            GrillStateAnim.StopPlayback();
         }
         if (other.tag != "Makkara")
         {

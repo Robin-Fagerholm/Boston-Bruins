@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 1479180565}
   m_Layer: 0
   m_Name: nuotio
-  m_TagString: Fire
+  m_TagString: Notch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,7 +1007,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.058469296}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1018,7 +1018,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5846958, y: 1.3508196}
   m_EdgeRadius: 0
 --- !u!1 &1586038829
 GameObject:
@@ -1052,6 +1052,30 @@ Transform:
   m_Father: {fileID: 316373031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005989218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5370447182093224461, guid: 3e56e2ad6d524ab47bf8f634c0c1612c, type: 3}
+  m_PrefabInstance: {fileID: 358222040717819612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2005989224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005989218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3fd3206cf8b0b534ea914b347fc3eda7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2062686649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1272,10 @@ PrefabInstance:
       propertyPath: State3Image
       value: 
       objectReference: {fileID: 2800000, guid: 77a2ab0d42178f74db02a7a0e41e4e62, type: 3}
+    - target: {fileID: 1810181472227763445, guid: 3e56e2ad6d524ab47bf8f634c0c1612c, type: 3}
+      propertyPath: GrillStateAnim
+      value: 
+      objectReference: {fileID: 2005989224}
     - target: {fileID: 4228182859285981138, guid: 3e56e2ad6d524ab47bf8f634c0c1612c, type: 3}
       propertyPath: m_Size.y
       value: 5.6099963
